@@ -2,6 +2,10 @@ import time
 import pi_servo_hat
 import atexit
 
+# warning for electronics setup. The pi hat is intended for servos so it tries to send power
+# over the wires to the motor controller. It will not work if it tries to do this so connect
+# motor controller to the pi hat with servo cables and DO NOT connect the middle red wire.
+
 
 def map_value(value, in_min, in_max, out_min, out_max):
     return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
